@@ -1,0 +1,49 @@
+mad_store:
+    resource: "@MadStoreBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+my_name:
+    path: /
+    defaults:
+        _controller: AppBundle:Default:index
+
+greet:
+    path: /greet
+    defaults:
+        _controller: AppBundle:Default:greet
+
+change_name:
+    path: /change-name/{name}
+    defaults:
+        _controller: AppBundle:Default:changeName
+
+it_works:
+    path: /it/it_works
+    defaults:
+        _controller: AppBundle:Default:myName
+
+read_book:
+    path: /book/read/{title}
+    defaults:
+        _controller: AppBundle:Default:readBook
+        page: 1
+        
+create_car:
+    path: /car-rent/create/{model}
+    defaults:
+        _controller: MadStoreBundle:Default:createCar
+
+show_car:
+    path: /car-rent
+    defaults:
+        _controller: MadStoreBundle:Default:showCar
+
+rent_car:
+    path: /car-rent/more-car-info/{id}
+    defaults:
+        _controller: MadStoreBundle:Default:moreCarInfo

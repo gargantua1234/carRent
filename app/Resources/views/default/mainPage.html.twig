@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+            <div class="col-md-4 container-info">
+    <div class="col-md-12 container-title">
+    Informacje dodatkowe:<br>
+        <span>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultrices quam ut varius vestibulum. In gravida leo a arcu commodo facilisis. Curabitur vel pharetra lacus, pharetra fringilla ante. Sed laoreet lacus at orci varius ornare. Donec placerat, mauris eu varius laoreet, felis tellus sodales nunc, ac pretium neque nulla non arcu. Quisque dictum sagittis nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+            </span>
+    </div>
+</div>
+    <div class="col-md-1"></div>
+<div class="col-md-7 container-cars">
+
+
+    <div class="col-md-12 container-title">
+    Samochody:
+    </div>
+{% for car in cars %}
+    <div class="row car-list">
+    <div class="col-md-4 reset photo">
+        <img src="../img/{{ car.name }}-{{ car.model }}.jpg" class="img-responsive">
+    </div>
+    <div class="col-md-5 reset description">
+        <div class="col-md-12 reset">{{ car.name }}
+            {{ car.model }}</div>
+        <div class="description-more">
+        <div class="col-md-12 reset">Segment: {{ car.segment }}</div>
+        </div>
+  
+    </div>
+    <div class="col-md-3 reset price text-center">
+        <span>{{ car.price }} zł</span> 
+        <a href="car-rent/more-car-info/{{car.id}}"><button>Więcej...</button></a>
+    </div>
+        </div>
+{% endfor %}
+</div>
+
+{% endblock %}
+{% block stylesheets %}
+<style>
+
+</style>
+{% endblock %}

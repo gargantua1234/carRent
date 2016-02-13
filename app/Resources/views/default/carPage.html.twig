@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+
+{% for c in car %}
+
+
+    <div class="row car-list car-more">
+    <div class="col-md-5 reset photo">
+        <img src="{{ asset('/img/'~ c.name ~'-'~ c.model ~'.jpg')}}" class="img-responsive">
+    </div>
+    <div class="col-md-4 reset description">
+        <div class="col-md-12 reset">{{ c.name }}
+            {{ c.model }}</div>
+        <div class="description-more">
+        <div class="col-md-12 reset">Kolor: {{ c.color}}</div>
+        <div class="col-md-12 reset">Segment: {{ c.segment }}</div>
+        <div class="col-md-12 reset">Silnik: {{ c.engine}}</div>
+        <div class="col-md-12 reset">Dostępny: {{ c.rentDate}}</div>
+        </div>
+  
+    </div>
+    <div class="col-md-3 reset price text-center">
+        <span>Cena: {{ c.price }} zł</span> 
+    </div>
+    </div>
+
+
+
+{% endfor %}
+
+
+
+
+{% endblock %}
+
+
+
+{% block stylesheets %}
+<style>
+
+</style>
+{% endblock %}
