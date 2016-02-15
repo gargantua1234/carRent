@@ -1,0 +1,150 @@
+// Color variables (appears count calculates by raw css)
+@color0: #bebebe; // Appears 5 times
+@color1: #ffffff; // Appears 2 times
+@color2: #434955; // Appears 2 times
+
+// Width variables (appears count calculates by raw css)
+@width0: 100%; // Appears 2 times
+
+// Height variables (appears count calculates by raw css)
+@height0: 400px; // Appears 3 times
+@height2: 150px; // Appears 4 times
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+.reset {
+	margin:0;
+	padding:0;
+}
+.img-responsive {
+	height:100%;
+	width:@width0;
+}
+.car-list {
+	border-bottom:1px dashed #000000;
+}
+.car-list>.price {
+	background:#f3f3f3;
+	color:@color2;
+	font-size:20px;
+	height:@height2;
+	padding:20px;
+}
+.car-list>.price>span {
+}
+.car-list>.price>button {
+	background:#3285ed;
+	border-radius:10px;
+	border:1px solid transparent;
+	color:@color1;
+	margin-top:10px;
+	padding:3px 5px;
+}
+.car-list>.description {
+	background:#f9f9f9;
+	color:@color2;
+	font-size:20px;
+	height:@height2;
+	padding:20px;
+}
+.car-list>.photo {
+	height:@height2;
+	overflow:hidden;
+}
+.description-more {
+	font-size:15px;
+}
+.container-title {
+	font-size:17px;
+	font-weight:400;
+	padding:10px;
+}
+.container-title>span {
+	font-size:13px;
+}
+.container-cars {
+	border-left:1px solid @color0;
+	border-radius: 5px 5px 0px 0px;
+	border-right:1px solid @color0;
+	border-top:1px solid @color0;
+}
+.container-info {
+	border-radius: 5px 5px 0px 0px;
+	border:1px solid @color0;
+}
+#bg {
+	background: url("../img/bg.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+	color: @color1;
+	font-size: 36px;
+	height: 360px;
+	line-height: 1.25;
+	margin-bottom:30px;
+	padding-top: 125px;
+	text-align: center;
+}
+.car-more>.photo {
+	height: @height0;
+}
+.car-more>.description {
+	height: @height0;
+}
+.car-more>.price {
+	height: @height0;
+}
+.login-page {
+    h1{
+        font-size:1.8em;
+    }
+    input{
+        border:none;
+        border: 1px solid #919C9A;
+        background:transparent;
+        margin-bottom:15px;
+    }
+    
+    .login-section{
+        h1{
+            margin-bottom:23px;
+        }
+    }
+    
+    .login-section{
+        border-right:1px solid #eee;
+    }
+    .submit-btn{
+        background:#51B4DF;
+        border:1px solid transparent;
+        border-radius:5px;
+        padding:10px 20px;
+        color:#fff;
+        font-weight:600;
+    }
+    .registry-section{
+        h1{
+            margin-bottom:70px;
+        }
+        
+        .submit-btn{
+            display: inline;
+        }
+        a:link{
+            text-decoration:none;
+        }
+        a:active{
+            text-decoration:none;
+        }
+        a:hover{
+            text-decoration:none;
+        }
+    }
+    
+}
+footer {
+	border-top:1px solid @color0;
+	height:@height2;
+	margin-top:40px;
+	width:@width0;
+}
