@@ -1,11 +1,18 @@
 # To get started with security, check out the documentation:
 # http://symfony.com/doc/current/book/security.html
 security:
+    encoders:
+        MadStoreBundle\Entity\User:
+            algorithm: bcrypt
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
         in_memory:
             memory: ~
+        our_db_provider:
+            entity:
+                class: MadStoreBundle:User
+                property: username
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -15,7 +22,12 @@ security:
 
         main:
             anonymous: ~
-            # activate different ways to authenticate
+            pattern:    ^/
+            http_basic: ~
+            provider: our_db_provider
+            form_login:
+                login_path: login
+                check_path: login
 
             # http_basic: ~
             # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate

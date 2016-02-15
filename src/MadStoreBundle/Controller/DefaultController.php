@@ -41,7 +41,7 @@ class DefaultController extends Controller
         'SELECT car
         FROM MadStoreBundle:Car car
         WHERE car.returnDate < :returnDate
-        ORDER BY car.returnDate ASC'
+        ORDER BY car.name ASC'
         )->setParameter('returnDate', $timeNow);
 
         $cars= $query->getResult();
