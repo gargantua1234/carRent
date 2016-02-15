@@ -9,10 +9,8 @@ security:
     providers:
         in_memory:
             memory: ~
-        our_db_provider:
-            entity:
-                class: MadStoreBundle:User
-                property: username
+        fos_userbundle:
+            id: fos_user.user_provider.username
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -24,11 +22,17 @@ security:
             anonymous: ~
             pattern:    ^/
             http_basic: ~
-            provider: our_db_provider
             form_login:
-                login_path: login
-                check_path: login
-
+                provider: fos_userbundle
+                csrf_token_generator: security.csrf.token_manager
+            logout:       true
+            anonymous:    true
+            
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/, role: ROLE_ADMIN }
             # http_basic: ~
             # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
 

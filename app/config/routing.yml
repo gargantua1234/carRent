@@ -42,8 +42,6 @@ rent_car:
     path: /car-rent/more-car-info/{id}
     defaults:
         _controller: MadStoreBundle:Default:moreCarInfo
-        
-user_registration:
-    path:     /register
-    defaults: 
-        _controller: MadStoreBundle:Registration:register 
+          
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
