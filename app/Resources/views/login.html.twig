@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+
+
+<div class="container login-page"><div class="row text-center">
+    <h1>By przejść dalej:</h1>
+        <hr>
+<div class="col-md-6 login-section">   
+<div class="col-md-12">
+<h1>Zaloguj się:</h1>
+
+
+</div>    
+    
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+<form action="{{ path("fos_user_security_check") }}" method="post">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+    <div class="col-md-12"><label for="username">{{ 'Login:'|trans }}</label></div>
+    <div class="col-md-12"><input type="text" id="username" name="_username" value="{{ last_username }}" required="required" /></div>
+
+    <div class="col-md-12"><label for="password">{{ 'Hasło:'|trans }}</label></div>
+        <div class="col-md-12"><input type="password" id="password" name="_password" required="required" /></div>
+<div class="col-md-12"><label for="remember_me">{{ 'Pamiętaj mnie:'|trans }}</label>
+        <div class="col-md-12"><input type="checkbox" id="remember_me" name="_remember_me" value="on" /></div>
+    
+        </div>
+        <div class="col-md-12"><input type="submit" id="_submit" class="submit-btn" name="_submit" value="{{ 'Zaloguj'|trans }}" /></div>
+</form>
+    </div> 
+    <div class="col-md-6 registry-section">
+<h1>Lub zarejestruj:</h1>
+        <a href="register">
+<div class="submit-btn">Zarejestruj się!</div>
+            </a>
+</div>
+    
+    
+    </div></div>
+{% endblock fos_user_content %}
+{% endblock %}
